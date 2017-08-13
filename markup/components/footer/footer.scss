@@ -1,0 +1,20 @@
+$footer_height: rem(56px);
+
+.page__wrapper {
+    position: relative;
+    min-height: 100%;
+    overflow: hidden;
+
+&:after {
+    content: "";
+    display: block;
+    height: $footer-height;
+    margin-bottom: -$footer-height;
+ }
+}
+
+.page__footer {
+    height: $footer_height;
+    background: #231f20;
+}
+

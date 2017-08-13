@@ -1,0 +1,26 @@
+doctype html
+html(class="no-js", lang="ru")
+
+    include ../components/head/head.pug
+    include ../components/footer/footer.pug
+    include ../components/header/header.pug
+    include ../components/calculator/calculator.pug
+
+    head
+        +head()
+    body.page
+        section.page__wrapper
+                +header()
+                .container-2
+                    .bread
+                        a(href="#") Главная
+                        span.bread__seporator -
+                        a(href="#") Вклады
+                        span.bread__seporator -
+                        span Калькулятор
+                main.page__main-content
+                    .container-2
+                        +calculator()
+        +footer()
+
+

@@ -1,0 +1,112 @@
+/******************* Clearfix *******************/
+
+%clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+/******************* Inline-block *******************/
+
+@mixin inlineblock($valign: top) {
+    display: inline-block;
+    vertical-align: $valign;
+}
+
+/******************* Растягивание на всю ширину блока *******************/
+
+@mixin justify() {
+    text-align: justify;
+    &:after {
+        content: "";
+        display: inline-block;
+        width: 100%;
+        height: 0;
+    }
+}
+
+/******************* Цвет текста в placeholder *******************/
+
+
+@mixin placeholder($placeholder_color: #000000) {
+    &::-webkit-input-placeholder {
+        color: $placeholder_color;
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+        color: $placeholder_color;
+    }
+    &::-moz-placeholder {  /* Firefox 19+ */
+        color: $placeholder_color;
+    }
+    &:-ms-input-placeholder {
+        color: $placeholder_color;
+    }
+}
+
+/******************* Перевод px в rem *******************/
+
+@function rem($px) {
+    @return $px / 16px + 0rem;
+}
+
+/******************* Сглаживание шрифтов *******************/
+
+@mixin font-smoothing($value: antialiased) {
+    @if $value == antialiased {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    @else {
+        -webkit-font-smoothing: subpixel-antialiased;
+        -moz-osx-font-smoothing: auto;
+    }
+}
+
+/******************* Медиазапросы *******************/
+
+@mixin desktop () {
+    @media screen and (min-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin laptop () {
+    @media screen and (max-width: 1199px) {
+        @content;
+    }
+}
+
+@mixin tablets () {
+    @media (max-width: 991px) {
+        @content;
+    }
+}
+
+@mixin phones () {
+    @media (max-width: 767px) {
+        @content;
+    }
+}
+
+/******************* Подключение шрифтов *******************/
+
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal, $asset-pipeline: false ) {
+    @font-face {
+        font-family: $font-family;
+        font-weight: $weight;
+        font-style: $style;
+
+
+        @if $asset-pipeline == true {
+            src: font-url('#{$file-path}.eot');
+            src: font-url('#{$file-path}.eot?#iefix') format('embedded-opentype'), font-url('#{$file-path}.woff') format('woff'), font-url('#{$file-path}.ttf') format('truetype');
+        }
+        @else {
+            src: url('#{$file-path}.eot');
+            src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'), url('#{$file-path}.woff') format('woff'), url('#{$file-path}.ttf') format('truetype');
+        }
+    }
+}
+

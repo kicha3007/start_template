@@ -1,0 +1,50 @@
+.nav {
+  text-align: center;
+
+  background: #231f20;
+  border-left: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.nav__list {
+  padding: 0;
+  display: inline-block;
+  font-size: 0;
+  text-align: center;
+
+}
+
+.nav__list> li {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 14px;
+}
+
+.nav__list> li> a  {
+  display: block;
+  padding: 12px 36px;
+  color: #ffffff;
+  text-decoration: none;
+  border-right: 1px solid #eb5017;
+  &:visited,
+  &:hover,
+  &:active  {
+    text-decoration: none;
+  }
+  transition: all 0.3s;
+}
+
+.nav__list> li:last-child a {
+  border-right: none;
+}
+
+
+.nav__list> li:hover> a,
+.nav__list> li.active> a {
+  background: #eb5017;
+
+}
+
+
+

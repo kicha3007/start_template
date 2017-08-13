@@ -1,0 +1,22 @@
+.logo {
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    color: #000000;
+  }
+  float: left;
+}
+
+
+.logo__img-box {
+  width: 218px;
+  height: 72px;
+  overflow: hidden;
+}
+
+.logo__img-box img {
+  max-width: 100%;
+  height: auto;
+}
+

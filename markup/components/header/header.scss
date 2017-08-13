@@ -1,0 +1,23 @@
+.header {
+  padding-top: 23px;
+  margin-bottom: 13px;
+}
+
+.header__top {
+  @extend %clearfix;
+  padding-bottom: 22px;
+}
+
+.header__bottom {
+  border-top: 1px solid #e0e0e0;
+}
+
+.header__left {
+   width: 30%;
+  float: left;
+ }
+
+.header__right {
+  width: 70%;
+  float: right;
+}

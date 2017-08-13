@@ -1,0 +1,13 @@
+mixin header(data)
+    include ../logo/logo
+    include ../nav/nav
+    include ../phone/phone
+    header.header
+        .container
+            .header__top
+                .header__left
+                    +logo()
+                .header__right
+                    +phone()
+        .header__bottom
+                +nav()
